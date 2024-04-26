@@ -12,7 +12,8 @@ export default [
         commentCount: 4,
         retweetCount: 13,
         heartCount: '5.2k',
-        analyticsCount: '22.7k'
+        analyticsCount: '22.7k',
+        totalTweets: '14.5k'
     },
     {
         profileImage: imgZuck,
@@ -24,6 +25,7 @@ export default [
         retweetCount: '2.3k',
         heartCount: '15.2k',
         analyticsCount: '82.9k',
+        totalTweets: '59.1k',
         article: {
             image: imgElon,
             site: 'twitter.com',
@@ -40,6 +42,7 @@ export default [
         commentCount: '1.4k',
         retweetCount: '420k',
         heartCount: '45.7k',
-        analyticsCount: '210k'
+        analyticsCount: '210k',
+        totalTweets: '28.3k'
     },
 ]
