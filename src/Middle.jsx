@@ -1,13 +1,14 @@
 import AddTweet from './AddTweet.jsx'
 import Tweets from './Tweets.jsx'
-import initialTweets from './assets/data/tweets.js'
+
 import { useState } from 'react'
 
-export default function Middle({loggedInUser}) {
+export default function Middle({loggedInUser, tweets}) {
     
+    console.log(tweets)
     
-    const [tweets, setTweets] = useState(initialTweets)
     const [createTweetContent, setCreateTweetContent] = useState('')
+    
     
     
     const addTweet = (e) => {
@@ -25,6 +26,8 @@ export default function Middle({loggedInUser}) {
             ...tweets
         ])
     }
+
+
     
     return (
         <main>

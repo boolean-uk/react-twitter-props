@@ -7,15 +7,23 @@ import { useState } from 'react'
 import user from './assets/data/user.js'
 
 // You may need to move these when creating new components
-import imgElon from './assets/images/elon.jpg'
-import imgZuck from './assets/images/zuck.jpg'
 import LeftSide from './LeftSide.jsx'
 import Middle from './Middle.jsx'
 import RightSide from './RightSide.jsx'
+import initialTweets from './assets/data/tweets.js'
+
+const getSearchResults = (tweets, searchValue) => tweets.filter((tweet) => tweet.content.includes(searchValue))
 
 function App() {
     const [loggedInUser] = useState(user)
-    
+    const [tweets, setTweets] = useState(initialTweets)
+    const [searchValue, setSearchValue] = useState('')
+    const [activeTweets, setActiveTweets] = useState(tweets)
+
+    let filteredTweets = tweets
+    if(searchValue){
+        filteredTweets = getSearchResults(filteredTweets, searchValue)
+    }
 
     
 
@@ -24,9 +32,9 @@ function App() {
             
             <LeftSide loggedInUser={loggedInUser}/>
 
-            <Middle loggedInUser={loggedInUser} />
+            <Middle loggedInUser={loggedInUser} tweets={filteredTweets} />
 
-            <RightSide/>
+            <RightSide setSearchValue={setSearchValue} searchValue={searchValue} />
         </div>
     )
 }

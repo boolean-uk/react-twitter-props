@@ -1,12 +1,16 @@
 import imgElon from './assets/images/elon.jpg'
 import imgZuck from './assets/images/zuck.jpg'
 
-export default function RightSide() {
+
+
+export default function RightSide({searchValue, setSearchValue}) {
+    
+    
     return(
     <aside className='right-side'>
     <div className='search-section'>
         <i className="fa-solid fa-magnifying-glass search-icon"></i>
-        <input className="search" type="text" placeholder="Search Twitter" />
+        <input onChange={(e)=>{setSearchValue(e.currentTarget.value)}} className="search" type="text" value={searchValue} placeholder="Search Twitter" />
     </div>
 
     <div className='widget'>
