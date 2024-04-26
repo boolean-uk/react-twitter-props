@@ -1,4 +1,4 @@
-export default function Tweet({tweet, index}) {
+export default function Tweet({tweet}) {
     return (
         <article className="tweet">
             <div className="profile-icon">
