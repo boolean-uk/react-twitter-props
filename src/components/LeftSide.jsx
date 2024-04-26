@@ -1,3 +1,5 @@
+import ProfileCard from "./ProfileCard"
+
 function LeftSide({ loggedInUser }) {
     return (
         <aside className="left-side">
@@ -71,12 +73,13 @@ function LeftSide({ loggedInUser }) {
             <button className="tweet-btn">Tweet</button>
 
             <div className='profile-card'>
-                <div className="profile-icon"><img src={loggedInUser.profileImage}/></div>
-
-                <div className="profile-details">
-                    <h4>{loggedInUser.name}</h4>
-                    <small>{loggedInUser.handle}</small>
-                </div>
+                <ProfileCard 
+                    name={loggedInUser.name} 
+                    handle={loggedInUser.handle} 
+                    image={loggedInUser.profileImage} 
+                    className1={"profile-icon"} 
+                    className2={"profile-details"} 
+                />
 
                 <div className="action">
                     <i className="fa-solid fa-ellipsis"></i>
