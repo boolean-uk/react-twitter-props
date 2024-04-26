@@ -2,6 +2,7 @@ import tweets from '../assets/data/tweets'
 import imgElon from '../assets/images/elon.jpg'
 import imgZuck from '../assets/images/zuck.jpg'
 import FollowBack from './FollowBack'
+import WhatsHappening from './WhatsHappening'
 
 export default function RightSide() {
     return (
@@ -22,8 +23,13 @@ export default function RightSide() {
 
                 <div className='widget'>
                     <h1>What's happening</h1>
-
-                    <div className="news-block">
+                    {tweets.map((user, index) => {
+                        return(
+                            <WhatsHappening user={user} index={index}/>
+                        )
+                        
+                    })}
+                    {/* <div className="news-block">
                         <div className="content">
                             <small>Entertainment · Trending</small>
                             <h4>Elon Musk</h4>
@@ -45,7 +51,7 @@ export default function RightSide() {
                         <div className="action">
                             <i className="fa-solid fa-ellipsis"></i>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='widget'>
                     <h1>Who to follow</h1>
