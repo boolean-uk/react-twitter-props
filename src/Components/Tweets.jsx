@@ -1,5 +1,7 @@
-export default function Tweets({ tweets }) {
+export default function Tweets({ tweets, searchTerm }) {
+    
   return tweets.map((tweet, index) => {
+    if (tweet.content.toLowerCase().includes(searchTerm.toLowerCase()))
     return (
       <article className="tweet" key={index}>
         <div className="profile-icon">

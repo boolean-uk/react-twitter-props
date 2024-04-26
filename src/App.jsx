@@ -15,7 +15,7 @@ function App() {
   const [loggedInUser] = useState(user);
   const [tweets, setTweets] = useState(initialTweets);
   const [createTweetContent, setCreateTweetContent] = useState("");
-
+  const [searchTerm, updateSearchTerm] = useState('')
 
   return (
     <div className="container">
@@ -27,9 +27,10 @@ function App() {
         createTweetContent={createTweetContent}
         tweets={tweets}
         setTweets={setTweets}
+        searchTerm={searchTerm}
       />
 
-      <RightNav />
+      <RightNav updateSearchTerm={updateSearchTerm}/>
 
       
     </div>

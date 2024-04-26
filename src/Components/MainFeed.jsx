@@ -1,5 +1,5 @@
 import Tweets from "./Tweets";
-import TweetForm from "./TweetForm"
+import TweetForm from "./TweetForm";
 
 export default function MainFeed({
   loggedInUser,
@@ -7,8 +7,8 @@ export default function MainFeed({
   createTweetContent,
   tweets,
   setTweets,
+  searchTerm
 }) {
-
 
   return (
     <main>
@@ -17,13 +17,19 @@ export default function MainFeed({
       </div>
 
       <div className="create-tweet">
-        <TweetForm loggedInUser={loggedInUser} createTweetContent={createTweetContent} setCreateTweetContent={setCreateTweetContent} setTweets={setTweets} tweets={tweets}/>
+        <TweetForm
+          loggedInUser={loggedInUser}
+          createTweetContent={createTweetContent}
+          setCreateTweetContent={setCreateTweetContent}
+          setTweets={setTweets}
+          tweets={tweets}
+        />
       </div>
 
       <div className="show-more-tweets">
         <p>Show 35 Tweets</p>
       </div>
-      <Tweets tweets={tweets} />
+      <Tweets tweets={tweets} searchTerm={searchTerm} />
     </main>
   );
 }

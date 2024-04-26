@@ -1,12 +1,14 @@
 import imgElon from "../assets/images/elon.jpg";
 import imgZuck from "../assets/images/zuck.jpg";
 
-export default function RightNav () {
+export default function RightNav ({updateSearchTerm}) {
+
+
     return (
         <aside className="right-side">
         <div className="search-section">
           <i className="fa-solid fa-magnifying-glass search-icon"></i>
-          <input className="search" type="text" placeholder="Search Twitter" />
+          <input onChange={(e) => updateSearchTerm(e.target.value)}className="search" type="text" placeholder="Search Twitter" />
         </div>
 
         <div className="widget">
