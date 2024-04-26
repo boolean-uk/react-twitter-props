@@ -15,6 +15,7 @@ function App() {
     const [loggedInUser] = useState(user)
     const [tweets, setTweets] = useState(initialTweets)
     const [createTweetContent, setCreateTweetContent] = useState('')
+    const [searchFilter, setSearchFilter] = useState('')
 
     const addTweet = (e) => {
         e.preventDefault()
@@ -43,9 +44,13 @@ function App() {
                 createTweetContent={createTweetContent}
                 setCreateTweetContent={setCreateTweetContent}
                 tweets={tweets}
+                searchFilter={searchFilter}
             />
 
-            <RightSide />
+            <RightSide 
+                searchFilter={searchFilter}
+                setSearchFilter={setSearchFilter}
+            />
 
         </div>
     )

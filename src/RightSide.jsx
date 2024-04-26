@@ -1,12 +1,18 @@
-import imgElon from './assets/images/elon.jpg'
-import imgZuck from './assets/images/zuck.jpg'
+import FollowBack from './FollowBack'
+import NewsBlock from './NewsBlock'
 
-export default function RightSide() {
+export default function RightSide({ searchFilter, setSearchFilter }) {
     return (
         <aside className='right-side'>
             <div className='search-section'>
                 <i className="fa-solid fa-magnifying-glass search-icon"></i>
-                <input className="search" type="text" placeholder="Search Twitter" />
+                <input 
+                    className="search" 
+                    type="text" 
+                    placeholder="Search Twitter" 
+                    value={searchFilter}
+                    onChange={(e) => setSearchFilter(e.target.value)}
+                />
             </div>
 
             <div className='widget'>
@@ -21,58 +27,12 @@ export default function RightSide() {
             <div className='widget'>
                 <h1>What's happening</h1>
 
-                <div className="news-block">
-                    <div className="content">
-                        <small>Entertainment · Trending</small>
-                        <h4>Elon Musk</h4>
-                        <small>14.5k Tweets</small>
-                    </div>
-
-                    <div className="action">
-                        <i className="fa-solid fa-ellipsis"></i>
-                    </div>
-                </div>
-
-                <div className="news-block">
-                    <div className="content">
-                        <small>Cage Fights · Trending</small>
-                        <h4>Mark Zuckerberg</h4>
-                        <small>59.1k Tweets</small>
-                    </div>
-
-                    <div className="action">
-                        <i className="fa-solid fa-ellipsis"></i>
-                    </div>
-                </div>
+                <NewsBlock />
             </div>
             <div className='widget'>
                 <h1>Who to follow</h1>
 
-                <div className="follow-block">
-                    <div className="icon"><img src={imgElon}/></div>
-
-                    <div className="content">
-                        <h4>Elon Musk</h4>
-                        <h5>@elonmusk</h5>
-                    </div>
-
-                    <div className="action">
-                        <button className="follow-btn">Follow</button>
-                    </div>
-                </div>
-
-                <div className="follow-block">
-                    <div className="icon"><img src={imgZuck}/></div>
-
-                    <div className="content">
-                        <h4>Mark Zuckerberg</h4>
-                        <h5>@markzuckerberg</h5>
-                    </div>
-
-                    <div className="action">
-                        <button className="follow-btn">Follow</button>
-                    </div>
-                </div>
+                <FollowBack />
             </div>
         </aside>
     )

@@ -1,7 +1,13 @@
-export default function Tweets({ tweets }) {
+export default function Tweets({ tweets, searchFilter }) {
+    const filteredTweets = tweets.filter((tweet) =>
+        tweet.name.toLowerCase().includes(searchFilter.toLowerCase()) ||
+        tweet.handle.toLowerCase().includes(searchFilter.toLowerCase()) ||
+        tweet.content.toLowerCase().includes(searchFilter.toLowerCase())
+    )
+    
     return (
         <>
-            {tweets.map((tweet, index) => {
+            {filteredTweets.map((tweet, index) => {
                 return (
                     <article className='tweet' key={index}>
                         <div className="profile-icon"><img src={tweet.profileImage}/></div>
