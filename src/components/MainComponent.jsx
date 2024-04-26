@@ -3,7 +3,6 @@ import CreateTweetForm from './CreateTweetForm.jsx'
 
 function MainComponent({ loggedInUser, tweets, setTweets }) {
 
-
     return (
         <main>
             <div className='top-bar'>
