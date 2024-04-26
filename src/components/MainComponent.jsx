@@ -1,12 +1,8 @@
-import { useState } from 'react'
-
-// The initial tweet objects that should be displayed
-import initialTweets from '../assets/data/tweets.js'
 import Tweet from './Tweet.jsx'
 import CreateTweetForm from './CreateTweetForm.jsx'
 
-function MainComponent({ loggedInUser }) {
-    const [tweets, setTweets] = useState(initialTweets)
+function MainComponent({ loggedInUser, tweets, setTweets }) {
+
 
     return (
         <main>

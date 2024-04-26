@@ -1,3 +1,4 @@
+import MenuItem from "./MenuItem"
 import ProfileCard from "./ProfileCard"
 
 function LeftSide({ loggedInUser }) {
@@ -7,68 +8,23 @@ function LeftSide({ loggedInUser }) {
                 <i className="fa-brands fa-twitter"></i>
             </div>
 
-            <div className="menu-item active">
-                <a href="#">
-                    <i className="fa-solid fa-house"></i>
-                    Home
-                </a>
-            </div>
+            <MenuItem className1={"menu-item active"} className2={"fa-solid fa-house"} text={'Home'} />
 
-            <div className="menu-item">
-                <a href="#">
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                    Explore
-                </a>
-            </div>
+            <MenuItem className1={"menu-item"} className2={"fa-solid fa-magnifying-glass"} text={'Explore'} />
 
-            <div className="menu-item">
-                <a href="#">
-                    <i className="fa-regular fa-bell"></i>
-                    Notifications
-                </a>
-            </div>
+            <MenuItem className1={"menu-item"} className2={"fa-regular fa-bell"} text={'Notifications'} />
 
-            <div className="menu-item">
-                <a href="#">
-                    <i className="fa-regular fa-envelope"></i>
-                    Messages
-                </a>
-            </div>
+            <MenuItem className1={"menu-item"} className2={"fa-regular fa-envelope"} text={'Messages'} />
 
-            <div className="menu-item">
-                <a href="#">
-                    <i className="fa-solid fa-bars"></i>
-                    Lists
-                </a>
-            </div>
+            <MenuItem className1={"menu-item"} className2={"fa-solid fa-bars"} text={'Lists'} />
 
-            <div className="menu-item">
-                <a href="#">
-                    <i className="fa-regular fa-bookmark"></i>
-                    Bookmarks
-                </a>
-            </div>
+            <MenuItem className1={"menu-item"} className2={"fa-regular fa-bookmark"} text={'Bookmarks'} />
 
-            <div className="menu-item">
-                <a href="#">
-                    <i className="fa-regular fa-circle-check"></i>
-                    Verified
-                </a>
-            </div>
+            <MenuItem className1={"menu-item"} className2={"fa-regular fa-circle-check"} text={'Verified'} />
 
-            <div className="menu-item">
-                <a href="#">
-                    <i className="fa-regular fa-user"></i>
-                    Profile
-                </a>
-            </div>
+            <MenuItem className1={"menu-item"} className2={"fa-regular fa-user"} text={'Profile'} />
 
-            <div className="menu-item">
-                <a href="#">
-                    <i className="fa-solid fa-ellipsis"></i>
-                    More
-                </a>
-            </div>
+            <MenuItem className1={"menu-item"} className2={"fa-solid fa-ellipsis"} text={'More'} />
 
             <button className="tweet-btn">Tweet</button>
 

@@ -2,12 +2,17 @@ import imgElon from '../assets/images/elon.jpg'
 import imgZuck from '../assets/images/zuck.jpg'
 import FollowBlock from './FollowBlock'
 
-function RightSide({  }) {
+function RightSide({ setSearchInput, searchInput }) {
+
+    function handleChange(e) {
+        setSearchInput(e.target.value.toLocaleLowerCase())
+    }
+
     return (
         <aside className='right-side'>
             <div className='search-section'>
                 <i className="fa-solid fa-magnifying-glass search-icon"></i>
-                <input className="search" type="text" placeholder="Search Twitter" />
+                <input className="search" type="text" placeholder="Search Twitter" value={searchInput} onChange={handleChange}/>
             </div>
 
             <div className='widget'>
