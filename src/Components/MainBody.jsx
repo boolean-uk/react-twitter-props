@@ -3,6 +3,7 @@ import Tweets from "./Tweets"
 
 export default function MainBody({loggedInUser, tweets, createTweetContent, addTweet, setCreateTweetContent}) {
     return (
+        
         <main>
             <div className='top-bar'>
                 <h2 className="title">Home</h2>

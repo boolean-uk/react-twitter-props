@@ -1,4 +1,4 @@
-export default function CreateTweet(loggedInUser, createTweetContent, addTweet, setCreateTweetContent) {
+export default function CreateTweet({loggedInUser, createTweetContent, addTweet, setCreateTweetContent}) {
     return (
         <div className='create-tweet'>
             <form onSubmit={addTweet}>
