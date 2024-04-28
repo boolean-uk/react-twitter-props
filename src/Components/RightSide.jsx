@@ -1,36 +1,9 @@
-import { useState } from 'react'
+import imgElon from '../assets/images/elon.jpg'
+import imgZuck from '../assets/images/zuck.jpg'
 
-// The initial tweet objects that should be displayed
-import initialTweets from './assets/data/tweets.js'
-
-// The user that we're pretending is signed in
-import user from './assets/data/user.js'
-
-// You may need to move these when creating new components
-// import imgElon from './assets/images/elon.jpg'
-// import imgZuck from './assets/images/zuck.jpg'
-
-import LeftSide from './Components/LeftSide.jsx'
-import MainSection from './Components/MainSection.jsx'
-import RightSide from './Components/RightSide.jsx'
-
-
-function App() {
-    const [loggedInUser] = useState(user)
-    const [tweets, setTweets] = useState(initialTweets)
-
-
+export default function RightSide() {
     return (
-        <div className="container">            
-
-            <LeftSide loggedInUser={loggedInUser} />
-
-            <MainSection loggedInUser={loggedInUser} tweets={tweets} setTweets={setTweets} />
-
-            <RightSide />
-            
-
-            {/* <aside className='right-side'>
+        <aside className='right-side'>
                 <div className='search-section'>
                     <i className="fa-solid fa-magnifying-glass search-icon"></i>
                     <input className="search" type="text" placeholder="Search Twitter" />
@@ -101,10 +74,6 @@ function App() {
                         </div>
                     </div>
                 </div>
-            </aside> */}
-
-        </div>
+            </aside>
     )
 }
-
-export default App
