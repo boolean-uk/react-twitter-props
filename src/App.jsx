@@ -11,39 +11,28 @@ import imgElon from './assets/images/elon.jpg'
 import imgZuck from './assets/images/zuck.jpg'
 
 import LeftSide from './Components/LeftSide.jsx'
+import MainSection from './Components/MainSection.jsx'
+
 
 function App() {
     const [loggedInUser] = useState(user)
     const [tweets, setTweets] = useState(initialTweets)
-    const [createTweetContent, setCreateTweetContent] = useState('')
 
-    const addTweet = (e) => {
-        e.preventDefault()
-        setTweets([
-            {
-                ...loggedInUser,
-                date: '1m',
-                content: createTweetContent,
-                commentCount: 0,
-                retweetCount: 0,
-                heartCount: 0,
-                analyticsCount: 0
-            },
-            ...tweets
-        ])
-    }
 
     return (
-        <div className="container">
+        <div className="container">            
+
+            <LeftSide loggedInUser={loggedInUser} />
+
+            <MainSection loggedInUser={loggedInUser} tweets={tweets} setTweets={setTweets} />
             
 
-            <LeftSide loggedInUser={loggedInUser}/>
-
-            <main>
+            {/* <main>
                 <div className='top-bar'>
                     <h2 className="title">Home</h2>
                 </div>
-
+            
+                
                 <div className='create-tweet'>
                     <form onSubmit={addTweet}>
                         <div className="avatar-section">
@@ -74,9 +63,9 @@ function App() {
                             <button type="submit" disabled={createTweetContent.length < 1} className="tweet-btn">Tweet</button>
                         </div>
                     </form>
-                </div>
+                </div> 
 
-                <div className="show-more-tweets">
+                 <div className="show-more-tweets">
                     <p>Show 35 Tweets</p>
                 </div>
 
@@ -127,7 +116,7 @@ function App() {
                         </article>
                     )
                 })}
-            </main>
+            </main> */}
 
             <aside className='right-side'>
                 <div className='search-section'>
