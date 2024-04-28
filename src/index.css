@@ -5,14 +5,14 @@
 
 :root {
     --black: #0f0f0f;
-    --white: #ffffff;
+    --white: #837a7a;
     --grey: rgb(83, 100, 113);
     --dark-grey: rgb(207, 217, 222);
     --border: rgb(239, 243, 244);
     --primary: rgb(29, 155, 240);
     --transparent-primary: rgba(29, 155, 240, 0.1);
     --primary-darker: rgb(26, 140, 216);
-    --primary-transparent: rgba(247, 249, 249);
+    --primary-transparent: rgb(119, 153, 153);
     --primary-transparent-more: rgba(15, 20, 25, 0.1);
     --black-btn: rgb(15, 20, 25);
     --black-btn-hover: rgb(39, 44, 48);
@@ -21,6 +21,7 @@
 }
 
 body {
+    background-color: rgb(165, 181, 176);
     color: var(--black);
     min-width: 100vw;
     min-height: 100vh;
@@ -212,6 +213,7 @@ main {
 .create-tweet .textarea-section {
     margin-right: 12px;
     margin-bottom: 12px;
+    
 }
 
 .create-tweet .content {
@@ -221,6 +223,7 @@ main {
     padding: 5px;
     border: none;
     resize: none;
+    background-color: rgb(132, 158, 158);
 }
 
 .create-tweet.dark .content {
