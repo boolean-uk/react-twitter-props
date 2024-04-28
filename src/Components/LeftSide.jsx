@@ -1,6 +1,7 @@
 import LeftMenuButton from "./LeftMenuButton"
 import ProfileCard from "./ProfileCard"
 
+
 export default function LeftSide({ loggedInUser }) {
 
     return (
@@ -21,7 +22,7 @@ export default function LeftSide({ loggedInUser }) {
 
             <button className="tweet-btn">Tweet</button>
 
-            <ProfileCard loggedInUser={loggedInUser}/>
+            <ProfileCard loggedInUser={loggedInUser} />
 
         </aside>
     )

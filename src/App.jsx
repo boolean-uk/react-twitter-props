@@ -6,10 +6,6 @@ import initialTweets from './assets/data/tweets.js'
 // The user that we're pretending is signed in
 import user from './assets/data/user.js'
 
-// You may need to move these when creating new components
-// import imgElon from './assets/images/elon.jpg'
-// import imgZuck from './assets/images/zuck.jpg'
-
 import LeftSide from './Components/LeftSide.jsx'
 import MainSection from './Components/MainSection.jsx'
 import RightSide from './Components/RightSide.jsx'
@@ -18,6 +14,15 @@ import RightSide from './Components/RightSide.jsx'
 function App() {
     const [loggedInUser] = useState(user)
     const [tweets, setTweets] = useState(initialTweets)
+    const [searchInput, setSearchInput] = useState('')
+
+
+
+    function searchResult(tweets, searchInput) {
+        return tweets.filter(tweet => tweet.content.toLowerCase().includes(searchInput))
+    }
+    const filteredTweets = searchResult(tweets, searchInput)
+
 
 
     return (
@@ -25,83 +30,9 @@ function App() {
 
             <LeftSide loggedInUser={loggedInUser} />
 
-            <MainSection loggedInUser={loggedInUser} tweets={tweets} setTweets={setTweets} />
+            <MainSection loggedInUser={loggedInUser} tweets={filteredTweets} setTweets={setTweets} />
 
-            <RightSide />
-            
-
-            {/* <aside className='right-side'>
-                <div className='search-section'>
-                    <i className="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input className="search" type="text" placeholder="Search Twitter" />
-                </div>
-
-                <div className='widget'>
-                    <div className="widget-grid">
-                        <h1>Get Verified</h1>
-                        <h3>Subscribe to unlock nothing.</h3>
-
-                        <button className="verify-btn">Get Verified</button>
-                    </div>
-                </div>
-
-                <div className='widget'>
-                    <h1>What's happening</h1>
-
-                    <div className="news-block">
-                        <div className="content">
-                            <small>Entertainment · Trending</small>
-                            <h4>Elon Musk</h4>
-                            <small>14.5k Tweets</small>
-                        </div>
-
-                        <div className="action">
-                            <i className="fa-solid fa-ellipsis"></i>
-                        </div>
-                    </div>
-
-                    <div className="news-block">
-                        <div className="content">
-                            <small>Cage Fights · Trending</small>
-                            <h4>Mark Zuckerberg</h4>
-                            <small>59.1k Tweets</small>
-                        </div>
-
-                        <div className="action">
-                            <i className="fa-solid fa-ellipsis"></i>
-                        </div>
-                    </div>
-                </div>
-                <div className='widget'>
-                    <h1>Who to follow</h1>
-
-                    <div className="follow-block">
-                        <div className="icon"><img src={imgElon}/></div>
-
-                        <div className="content">
-                            <h4>Elon Musk</h4>
-                            <h5>@elonmusk</h5>
-                        </div>
-
-                        <div className="action">
-                            <button className="follow-btn">Follow</button>
-                        </div>
-                    </div>
-
-                    <div className="follow-block">
-                        <div className="icon"><img src={imgZuck}/></div>
-
-                        <div className="content">
-                            <h4>Mark Zuckerberg</h4>
-                            <h5>@markzuckerberg</h5>
-                        </div>
-
-                        <div className="action">
-                            <button className="follow-btn">Follow</button>
-                        </div>
-                    </div>
-                </div>
-            </aside> */}
+            <RightSide searchInput={searchInput} setSearchInput={setSearchInput} />
 
         </div>
     )
