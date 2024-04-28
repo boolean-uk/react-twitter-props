@@ -96,7 +96,7 @@ a:hover {
     transition: 100ms;
 }
 
-.left-side.dark .menu-item a  {
+.left-side.dark .menu-item a {
     background-color: var(--black);
     color: var(--white);
 }
@@ -212,6 +212,7 @@ main {
 .create-tweet .textarea-section {
     margin-right: 12px;
     margin-bottom: 12px;
+
 }
 
 .create-tweet .content {
@@ -221,6 +222,7 @@ main {
     padding: 5px;
     border: none;
     resize: none;
+    background-color: rgb(132, 158, 158);
 }
 
 .create-tweet.dark .content {
@@ -264,13 +266,15 @@ main {
     transition: 300ms;
 }
 
-.show-more-tweets:hover, .tweet:hover {
+.show-more-tweets:hover,
+.tweet:hover {
     cursor: pointer;
     background-color: var(--primary-transparent);
     transition: 300ms;
 }
 
-.show-more-tweets:hover, .tweet.dark:hover {
+.show-more-tweets:hover,
+.tweet.dark:hover {
     cursor: pointer;
     background-color: var(--primary-darker);
     color: var(--white);
@@ -466,18 +470,21 @@ button:disabled {
     padding: 15px 20px;
 }
 
-.news-block, .follow-block {
+.news-block,
+.follow-block {
     row-gap: 0;
     column-gap: 5px;
     align-items: center;
 }
 
-.follow-block:hover, .news-block:hover {
-    background-color: rgba(0,0,0,0.03);
+.follow-block:hover,
+.news-block:hover {
+    background-color: rgba(0, 0, 0, 0.03);
     cursor: pointer;
 }
 
-.dark .follow-block:hover, .dark .news-block:hover {
+.dark .follow-block:hover,
+.dark .news-block:hover {
     background-color: var(--primary-transparent-more);
 }
 
@@ -543,8 +550,7 @@ button:disabled {
 }
 
 .create-tweet .tweet-btn:disabled:hover,
-.create-tweet.dark .tweet-btn:disabled:hover
-{
+.create-tweet.dark .tweet-btn:disabled:hover {
     background-color: var(--grey);
     color: var(--white);
 }
@@ -608,7 +614,7 @@ button:disabled {
     color: var(--white);
 }
 
-.right-side .widget.dark small{
+.right-side .widget.dark small {
     color: var(--primary-transparent);
 }
 
