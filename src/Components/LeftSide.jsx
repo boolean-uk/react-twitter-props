@@ -1,7 +1,7 @@
 import LeftMenuButton from "./LeftMenuButton"
 import ProfileCard from "./ProfileCard"
 
-export default function ({ loggedInUser }) {
+export default function LeftSide({ loggedInUser }) {
 
     return (
         <aside className="left-side">
@@ -18,25 +18,11 @@ export default function ({ loggedInUser }) {
             <LeftMenuButton btnClass={'menu-item'} iconClass={"fa-regular fa-circle-check"} text={'Verified' } />
             <LeftMenuButton btnClass={'menu-item'} iconClass={"fa-regular fa-user"} text={'Profile' } />
             <LeftMenuButton btnClass={'menu-item'} iconClass={"fa-solid fa-ellipsis"} text={'More' } />
-            {/* <LeftMenuButton btnClass={'menu-item active'} iconClass={""} text={'Home' } /> */}
-
 
             <button className="tweet-btn">Tweet</button>
 
             <ProfileCard loggedInUser={loggedInUser}/>
-{/* 
-            <div className='profile-card'>
-                <div className="profile-icon"><img src={loggedInUser.profileImage}/></div>
 
-                <div className="profile-details">
-                    <h4>{loggedInUser.name}</h4>
-                    <small>{loggedInUser.handle}</small>
-                </div>
-
-                <div className="action">
-                    <i className="fa-solid fa-ellipsis"></i>
-                </div>
-            </div> */}
         </aside>
     )
 }
