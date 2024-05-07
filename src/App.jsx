@@ -5,6 +5,7 @@ import user from './assets/data/user.js';
 import LeftSidebar from './components/LeftSidebar';
 import MainContent from './components/MainContent';
 import RightSidebar from './components/RightSidebar';
+import Tweet from './components/Tweet.jsx';
 
 function App() {
   const [loggedInUser] = useState(user);

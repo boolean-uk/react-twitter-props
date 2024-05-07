@@ -1,4 +1,3 @@
-// LeftSidebar.jsx
 import React from 'react';
 
 const LeftSidebar = ({ loggedInUser }) => {
