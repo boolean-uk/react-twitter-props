@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import MenuItem from './components/MenuItem.jsx'
+import Tweet from './components/Tweet.jsx'
+import RightSide from './components/RightSide.jsx'
 
 // The initial tweet objects that should be displayed
 import initialTweets from './assets/data/tweets.js'
@@ -6,9 +9,7 @@ import initialTweets from './assets/data/tweets.js'
 // The user that we're pretending is signed in
 import user from './assets/data/user.js'
 
-// You may need to move these when creating new components
-import imgElon from './assets/images/elon.jpg'
-import imgZuck from './assets/images/zuck.jpg'
+
 
 function App() {
     const [loggedInUser] = useState(user)
@@ -39,12 +40,12 @@ function App() {
                     <i className="fa-brands fa-twitter"></i>
                 </div>
 
-                <div className="menu-item active">
-                    <a href="#">
-                        <i className="fa-solid fa-house"></i>
-                        Home
-                    </a>
-                </div>
+                <MenuItem title="Home" active={true} icon="fa-house"/>
+
+
+
+
+
 
                 <div className="menu-item">
                     <a href="#">
@@ -161,125 +162,12 @@ function App() {
 
                 {tweets.map((tweet, index) => {
                     return (
-                        <article className='tweet' key={index}>
-                            <div className="profile-icon"><img src={tweet.profileImage}/></div>
-
-                            <div className="tweet-content">
-                                <h4>{tweet.name} <span>{tweet.handle} · {tweet.date}</span></h4>
-                                <p>{tweet.content}</p>
-
-                                {tweet.article &&
-                                    <div className="tweet-article">
-                                        <img src={tweet.article.image} />
-                                        <small>{tweet.article.site}</small>
-                                        <h5>{tweet.article.title}</h5>
-                                        <p>{tweet.article.content}</p>
-                                    </div>
-                                }
-
-                                <div className="tweet-actions">
-                                    <span>
-                                        <i className="fa-regular fa-comment"></i>
-                                        <small>{tweet.commentCount}</small>
-                                    </span>
-
-                                    <span>
-                                        <i className="fa-solid fa-arrows-rotate"></i>
-                                        <small>{tweet.retweetCount}</small>
-                                    </span>
-
-                                    <span>
-                                        <i className="fa-regular fa-heart"></i>
-                                        <small>{tweet.heartCount}</small>
-                                    </span>
-
-                                    <span>
-                                        <i className="fa-solid fa-chart-simple"></i>
-                                        <small>{tweet.analyticsCount}</small>
-                                    </span>
-
-                                    <span>
-                                        <i className="fa-solid fa-upload"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </article>
+                       <Tweet key={index} tweet={tweet}/>
                     )
                 })}
             </main>
 
-            <aside className='right-side'>
-                <div className='search-section'>
-                    <i className="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input className="search" type="text" placeholder="Search Twitter" />
-                </div>
-
-                <div className='widget'>
-                    <div className="widget-grid">
-                        <h1>Get Verified</h1>
-                        <h3>Subscribe to unlock nothing.</h3>
-
-                        <button className="verify-btn">Get Verified</button>
-                    </div>
-                </div>
-
-                <div className='widget'>
-                    <h1>What's happening</h1>
-
-                    <div className="news-block">
-                        <div className="content">
-                            <small>Entertainment · Trending</small>
-                            <h4>Elon Musk</h4>
-                            <small>14.5k Tweets</small>
-                        </div>
-
-                        <div className="action">
-                            <i className="fa-solid fa-ellipsis"></i>
-                        </div>
-                    </div>
-
-                    <div className="news-block">
-                        <div className="content">
-                            <small>Cage Fights · Trending</small>
-                            <h4>Mark Zuckerberg</h4>
-                            <small>59.1k Tweets</small>
-                        </div>
-
-                        <div className="action">
-                            <i className="fa-solid fa-ellipsis"></i>
-                        </div>
-                    </div>
-                </div>
-                <div className='widget'>
-                    <h1>Who to follow</h1>
-
-                    <div className="follow-block">
-                        <div className="icon"><img src={imgElon}/></div>
-
-                        <div className="content">
-                            <h4>Elon Musk</h4>
-                            <h5>@elonmusk</h5>
-                        </div>
-
-                        <div className="action">
-                            <button className="follow-btn">Follow</button>
-                        </div>
-                    </div>
-
-                    <div className="follow-block">
-                        <div className="icon"><img src={imgZuck}/></div>
-
-                        <div className="content">
-                            <h4>Mark Zuckerberg</h4>
-                            <h5>@markzuckerberg</h5>
-                        </div>
-
-                        <div className="action">
-                            <button className="follow-btn">Follow</button>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+<RightSide/>
 
         </div>
     )
