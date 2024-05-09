@@ -1,6 +1,7 @@
 export default function CreateTweet({
   loggedInUser,
   createTweetContent,
+  setCreateTweetContent,
   addTweet,
 }) {
   return (

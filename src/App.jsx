@@ -51,6 +51,7 @@ function App() {
           loggedInUser={loggedInUser}
           createTweetContent={createTweetContent}
           addTweet={addTweet}
+          setCreateTweetContent={setCreateTweetContent}
         />
         <ShowMore />
         <TweetContent tweets={tweets} />
