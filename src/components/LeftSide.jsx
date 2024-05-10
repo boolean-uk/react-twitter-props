@@ -1,3 +1,4 @@
+//test
 export default function LeftSide({loggedInUser}){
   return (
     <aside className="left-side">
@@ -85,3 +86,4 @@ export default function LeftSide({loggedInUser}){
     </aside>
   )
 }
+//test
