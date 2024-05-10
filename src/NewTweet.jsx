@@ -1,5 +1,5 @@
 
-const NewTweet = ({ tweet }) => {
+function NewTweet({tweet}) {
     return (
         <article className='tweet' key={index}>
             <div className="profile-icon"><img src={tweet.profileImage}/></div>
