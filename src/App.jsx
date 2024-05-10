@@ -1,4 +1,4 @@
-//test
+
 import { useState } from 'react'
 
 // The initial tweet objects that should be displayed
@@ -8,8 +8,6 @@ import initialTweets from './assets/data/tweets.js'
 import user from './assets/data/user.js'
 
 // You may need to move these when creating new components
-import imgElon from './assets/images/elon.jpg'
-import imgZuck from './assets/images/zuck.jpg'
 import LeftSide from './components/LeftSide.jsx'
 import MainContent from './components/MainContent.jsx'
 import RightSide from './components/RightSide.jsx'
@@ -49,4 +47,3 @@ function App() {
 }
 
 export default App
-//test
