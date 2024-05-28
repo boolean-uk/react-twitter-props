@@ -1,4 +1,4 @@
-function LeftSide() {
+function LeftSide ({ loggedInUser}) {
     return (
         <aside className="left-side">
                 <div className="logo">
