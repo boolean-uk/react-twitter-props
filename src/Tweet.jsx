@@ -1,6 +1,6 @@
 export default function Tweet({ tweet }) {
     return (
-        <article className='tweet' key={index}>
+        <article className='tweet'>
             <div className='profile-icon'>
                 <img src={tweet.profileImage} />
             </div>
